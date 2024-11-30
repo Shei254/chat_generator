@@ -119,7 +119,7 @@ const server = http.createServer(function (request, response) {
         });
 
         const fileWriter = fs.createWriteStream(cacheKey, {
-            flags: "w"
+            flags: "wx+" //Incase simoultanously ccreating at same time
         });
 
         response.writeHead(200, {
